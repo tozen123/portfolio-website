@@ -34,7 +34,7 @@ export default function AnimatedSection({
       className={className}
       initial={{ opacity: 0, ...initial }}
       whileInView={{ opacity: 1, ...animate }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.3 }}
       transition={{ 
         duration: 0.7, 
         ease: "easeOut",

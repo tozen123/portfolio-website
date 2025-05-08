@@ -18,7 +18,7 @@ export default function Works() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#99f2c8] to-[#bcf5da] bg-clip-text text-transparent"
                     >
                         Works
@@ -28,7 +28,7 @@ export default function Works() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="text-gray-300 max-w-lg mx-auto"
                     >
                         Check out some of my recent projects that showcase my skills and passion for development.
@@ -37,8 +37,8 @@ export default function Works() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: false }}
                     className="w-full px-4 sm:px-0 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 "
                 >
 
@@ -52,7 +52,7 @@ export default function Works() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="mt-12"
                 >
 
