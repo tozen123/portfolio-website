@@ -1,9 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Project } from "../../data/ProjectsData";
-
 import { RiGithubFill, RiExternalLinkFill } from "@remixicon/react";
-
 
 interface ProjectCardProps {
   project: Project;
@@ -11,16 +8,38 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5, 
+        delayChildren: 1, 
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 10 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
-      viewport={{ once: true }}
+      transition={{ duration: 1, delay: 0.85 * index }}
+      viewport={{ once: false }}
       className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-5 border-transparent hover:border-[#44524B]"
-
-
-
     >
       <div className="relative">
         <img 
@@ -37,7 +56,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/70 text-white hover:bg-black transition-colors"
             >
-           
               <RiGithubFill />
             </a>
           )}
@@ -58,17 +76,29 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
         <p className="text-gray-300 mb-4 text-sm">{project.description}</p>
         
-        <div className="flex flex-wrap gap-2 mt-4">
+        <motion.div 
+          className="flex flex-wrap gap-2 mt-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+        >
           {project.techStack.map((tech, i) => (
-            <div 
+            <motion.div 
               key={i} 
               className="flex items-center px-3 py-1 rounded-full text-xs text-gray-950"
               style={{ backgroundColor: '#2ae88e' }}
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.1, 
+                backgroundColor: '#1ad67c',
+                transition: { duration: 0.5 } 
+              }}
             >
               {tech.name}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );
