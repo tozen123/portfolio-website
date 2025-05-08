@@ -17,7 +17,7 @@ export default function Navbar() {
   >
     <nav className="w-full px-4 md:px-85 py-12 fixed top-0 left-0 z-50 bg-transparent backdrop-blur-md">
       <div className="flex justify-between items-center">
-        <div className="text-xl font-semibold text-[color:var(--foreground)]">
+        <div className="text-3xl font-semibold text-[color:var(--foreground)]">
           Portfolio
         </div>
 
@@ -31,7 +31,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="hidden md:flex gap-16 text-[color:var(--foreground)]">
+        <div className="text-xl hidden md:flex gap-16 text-[color:var(--foreground)]">
           <motion.div
             whileHover={{ scale: 1.15 }}
             transition={{ type: "spring", stiffness: 300 }}

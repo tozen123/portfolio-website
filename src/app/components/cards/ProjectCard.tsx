@@ -2,6 +2,9 @@
 import { motion } from "framer-motion";
 import { Project } from "../../data/ProjectsData";
 
+import { RiGithubFill, RiExternalLinkFill } from "@remixicon/react";
+
+
 interface ProjectCardProps {
   project: Project;
   index: number;
@@ -14,7 +17,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 * index }}
       viewport={{ once: true }}
-      className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+      className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
     >
       <div className="relative">
         <img 
@@ -31,7 +34,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/70 text-white hover:bg-black transition-colors"
             >
-              <i className="ri-github-fill text-lg"></i>
+           
+              <RiGithubFill />
             </a>
           )}
           {project.links.live && (
@@ -41,7 +45,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/70 text-white hover:bg-black transition-colors"
             >
-              <i className="ri-external-link-fill text-lg"></i>
+              <RiExternalLinkFill />
             </a>
           )}
         </div>
@@ -55,9 +59,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.techStack.map((tech, i) => (
             <div 
               key={i} 
-              className="flex items-center bg-gray-800 px-3 py-1 rounded-full text-xs text-gray-300"
+              className="flex items-center px-3 py-1 rounded-full text-xs text-gray-950"
+              style={{ backgroundColor: '#2ae88e' }}
             >
-              <i className={tech.icon + " mr-1"}></i>
               {tech.name}
             </div>
           ))}
