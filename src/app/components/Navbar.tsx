@@ -15,7 +15,7 @@ export default function Navbar() {
     transition={{ duration: 0.5, ease: "easeOut" }}
     className="font-poppins w-full px-4 md:px-20 py-4 fixed top-0 left-0 z-50 bg-transparent backdrop-blur-md"
   >
-    <nav className="w-full px-4 md:px-80 py-12 fixed top-0 left-0 z-50 bg-transparent backdrop-blur-md">
+    <nav className="w-full px-4 md:px-85 py-12 fixed top-0 left-0 z-50 bg-transparent backdrop-blur-md">
       <div className="flex justify-between items-center">
         <div className="text-xl font-semibold text-[color:var(--foreground)]">
           Portfolio
@@ -31,10 +31,47 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="hidden md:flex gap-8 text-[color:var(--foreground)]">
-          <Link href="#about" className="hover:underline">About</Link>
-          <Link href="#works" className="hover:underline">Works</Link>
-          <Link href="#contact" className="hover:underline">Contact</Link>
+        <div className="hidden md:flex gap-16 text-[color:var(--foreground)]">
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="relative"
+          >
+            <Link
+              href="#about"
+              className="hover:text-[#99f2c8] transition-colors duration-300"
+            >
+              About
+              <span className="block h-[2px] w-0 bg-[#99f2c8] transition-all duration-300 hover:w-full"></span>
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="relative"
+          >
+            <Link
+              href="#works"
+              className="hover:text-[#99f2c8] transition-colors duration-300"
+            >
+              Works
+              <span className="block h-[2px] w-0 bg-[#99f2c8] transition-all duration-300 hover:w-full"></span>
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="relative"
+          >
+            <Link
+              href="#contact"
+              className="hover:text-[#99f2c8] transition-colors duration-300"
+            >
+              Contact
+              <span className="block h-[2px] w-0 bg-[#99f2c8] transition-all duration-300 hover:w-full"></span>
+            </Link>
+          </motion.div>
+          
         </div>
       </div>
 
