@@ -76,13 +76,33 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="flex flex-col gap-4 mt-4 md:hidden text-[color:var(--foreground)]">
-          <Link href="#about" className="hover:underline" onClick={() => setIsOpen(false)}>About</Link>
-          <Link href="#works" className="hover:underline" onClick={() => setIsOpen(false)}>Works</Link>
-          <Link href="#contact" className="hover:underline" onClick={() => setIsOpen(false)}>Contact</Link>
-        </div>
-      )}
-    </nav>
+          <div
+            className="flex flex-col gap-4 mt-4 md:hidden text-[color:var(--foreground)] bg-black bg-opacity-50 backdrop-blur-md p-4 rounded-md transition-all duration-300"
+          >
+            <Link
+              href="#about"
+              className="hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="#works"
+              className="hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              Works
+            </Link>
+            <Link
+              href="#contact"
+              className="hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+          </div>
+        )}
+      </nav>
     </motion.nav>
   );
 }

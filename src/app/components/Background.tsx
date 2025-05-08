@@ -26,11 +26,11 @@ export default function Background() {
     <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <div
         ref={blob1}
-        className="transition-transform duration-100 ease-linear absolute left-[10%] top-[10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,_#1f4037_0%,_#99f2c8_100%)] opacity-30 blur-[150px]"
+        className="transition-transform duration-100 ease-linear absolute left-[5%] top-[5%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,_#1f4037_0%,_#99f2c8_100%)] opacity-30 blur-[150px]"
       ></div>
       <div
         ref={blob2}
-        className="transition-transform duration-100 ease-linear absolute right-[5%] bottom-[5%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(ellipse_at_center,_#99f2c8_0%,_#1f4037_100%)] opacity-20 blur-[120px]"
+        className="transition-transform duration-100 ease-linear absolute right-[5%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(ellipse_at_center,_#99f2c8_0%,_#1f4037_100%)] opacity-20 blur-[120px]"
       ></div>
     </div>
   );
