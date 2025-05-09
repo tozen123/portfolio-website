@@ -10,7 +10,28 @@ export default function Hero() {
       className="min-h-screen px-6 sm:px-20 py-24 flex items-center justify-center relative"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-50">
-        <div className="hidden md:block md:w-1/3"></div>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.5, ease: "easeOut" }}
+          className="md:block  md:w-1/3 text-center md:text-left"
+        >
+          <div className=" ">
+
+            <motion.h2
+              className="text-xl sm:text-2xl font-semibold italic text-white/60 transition-all duration-100"
+              whileHover={{
+                textShadow: "0 0 18px rgba(153, 242, 200, 1)",
+                color: "#99f2c8"
+              }}
+            >
+              Involved in developing scalable systems.
+            </motion.h2>
+
+          </div>
+        </motion.div>
+
+
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +62,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
           className="md:w-1/3 text-center md:text-left"
         >
           <div className="">
