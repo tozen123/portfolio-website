@@ -2,8 +2,28 @@
 
 import { motion } from 'framer-motion';
 import Slider from 'react-infinite-logo-slider';
+import { useState, useEffect } from 'react';
 
 const Testimonials = () => {
+  const [sliderWidth, setSliderWidth] = useState('100%'); 
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setSliderWidth('50%'); 
+      } else {
+        setSliderWidth('100%');
+      }
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize); 
+    };
+  }, []);
+
   const testimonials = [
     {
       name: 'Jane Doe',
@@ -41,21 +61,19 @@ const Testimonials = () => {
       </div>
 
       <Slider
-        width="50%" 
-        duration={150} 
-        pauseOnHover={false} 
-        blurBorders={false} 
-        blurBorderColor={'#1B1B1B'} 
-       
+        width={sliderWidth} 
+        duration={150}
+        pauseOnHover={false}
+        blurBorders={false}
+        blurBorderColor={'#1B1B1B'}
       >
         {testimonials.map((testimonial, index) => (
           <Slider.Slide key={index}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}   
-              animate={{ opacity: 1, y: 0 }}     
-              transition={{ duration: 0.6 }}    
-              viewport={{ once: false }} 
-              
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: false }}
               className="rounded-2xl p-8 text-center w-full max-w-sm mx-auto"
             >
               <p className="text-lg italic text-white/80 mb-6">
