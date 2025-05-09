@@ -13,8 +13,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5, 
-        delayChildren: 1, 
+        staggerChildren: 0.25, 
+        delayChildren: 0.5, 
       }
     }
   };
@@ -37,7 +37,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.85 * index }}
+      transition={{ duration: 1, delay: 0.15 * index }}
       viewport={{ once: false }}
       className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-5 border-transparent hover:border-[#44524B]"
     >

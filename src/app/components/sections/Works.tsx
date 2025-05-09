@@ -37,7 +37,7 @@ export default function Works() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.1 }}
                     viewport={{ once: false }}
                     className="w-full px-4 sm:px-0 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 "
                 >
@@ -51,7 +51,7 @@ export default function Works() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
+                    transition={{ duration: 0.25, delay: 0.5 }}
                     viewport={{ once: false }}
                     className="mt-12"
                 >
