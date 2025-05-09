@@ -10,6 +10,8 @@ import Work from "./components/sections/Works";
 import Hero from "./components/sections/Hero";
 
 
+import Footer from "./components/Footer";
+
 export default function Home() {
   return (
     <>
@@ -21,6 +23,8 @@ export default function Home() {
       <About />
       <Work />
       <Contact />
+
+      <Footer />
     </>
   );
 }

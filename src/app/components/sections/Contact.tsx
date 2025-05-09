@@ -11,7 +11,7 @@ export default function Contact() {
         subject: "",
         message: ""
     });
-    
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<null | "success" | "error">(null);
 
@@ -27,11 +27,11 @@ export default function Contact() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+
         try {
             await emailjs.send(
                 "YOUR_EMAILJS_SERVICE_ID",
-                "YOUR_EMAILJS_TEMPLATE_ID", 
+                "YOUR_EMAILJS_TEMPLATE_ID",
                 {
                     from_name: formData.name,
                     from_email: formData.email,
@@ -39,14 +39,14 @@ export default function Contact() {
                     message: formData.message,
                 }
             );
-            
+
             setSubmitStatus("success");
             setFormData({ name: "", email: "", subject: "", message: "" });
-            
+
             setTimeout(() => setSubmitStatus(null), 5000);
         } catch (error) {
             setSubmitStatus("error");
-            
+
             setTimeout(() => setSubmitStatus(null), 5000);
         } finally {
             setIsSubmitting(false);
@@ -57,22 +57,37 @@ export default function Contact() {
         {
             name: "GitHub",
             icon: <Github size={24} />,
-            url: "https://github.com/yourusername", 
+            url: "https://github.com/yourusername",
             color: "from-white/10 to-white/5"
         },
         {
             name: "LinkedIn",
             icon: <Linkedin size={24} />,
-            url: "https://linkedin.com/in/yourusername", 
+            url: "https://linkedin.com/in/yourusername",
             color: "from-white/10 to-white/5"
         },
         {
             name: "Email",
             icon: <Mail size={24} />,
-            url: "mailto:your@email.com", 
+            url: "mailto:your@email.com",
             color: "from-white/10 to-white/5"
         }
     ];
+
+    const containerVariants = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.25,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.25,  ease: "easeOut" } },
+    };
 
     return (
         <AnimatedSection
@@ -92,24 +107,22 @@ export default function Contact() {
             </div>
 
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false }}
                 className="flex flex-wrap justify-center gap-9 mb-12"
             >
-                {socialLinks.map((link, index) => (
+                {socialLinks.map((link) => (
                     <motion.a
                         key={link.name}
+                        variants={itemVariants}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ y: -5, scale: 1.15 }}
                         whileTap={{ scale: 0.95 }}
                         className={`flex items-center gap-3 bg-gradient-to-br ${link.color} p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-64`}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.1 * index }}
                     >
                         <div className="bg-white/10 p-3 rounded-lg">
                             {link.icon}
@@ -162,7 +175,7 @@ export default function Contact() {
                             />
                         </div>
                     </div>
-                    
+
                     <div>
                         <label htmlFor="subject" className="block text-sm font-medium text-white/80 mb-1">
                             Subject
@@ -178,7 +191,7 @@ export default function Contact() {
                             placeholder="What is this regarding?"
                         />
                     </div>
-                    
+
                     <div>
                         <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-1">
                             Message
@@ -194,7 +207,7 @@ export default function Contact() {
                             placeholder="Your message here..."
                         />
                     </div>
-                    
+
                     <div className="flex justify-end">
                         <motion.button
                             type="submit"
@@ -210,7 +223,7 @@ export default function Contact() {
                             )}
                         </motion.button>
                     </div>
-                    
+
                     {submitStatus === "success" && (
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
@@ -220,7 +233,7 @@ export default function Contact() {
                             Message sent successfully! I'll get back to you soon.
                         </motion.div>
                     )}
-                    
+
                     {submitStatus === "error" && (
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}

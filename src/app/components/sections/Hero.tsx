@@ -41,7 +41,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay:0.5, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           className="md:w-1/3 text-center md:text-left"
         >
           <div className="">
