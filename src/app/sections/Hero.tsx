@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import AnimatedSection from "../AnimatedSection";
+import AnimatedSection from "../components/AnimatedSection";
 
 export default function Hero() {
   return (

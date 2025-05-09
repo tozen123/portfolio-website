@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import AnimatedSection from "../AnimatedSection";
-import ProjectCard from "../../components/cards/ProjectCard";
-import { projects } from "../../data/ProjectsData";
+import AnimatedSection from "../components/AnimatedSection";
+import ProjectCard from "../components/cards/ProjectCard";
+import { projects } from "../data/ProjectsData";
 
-import Background from "../../components/Background";
+import Background from "../components/Background";
 
 export default function Works() {
     return (

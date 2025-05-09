@@ -4,12 +4,13 @@ import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 
 
-import About from "./components/sections/About";
-import Contact from "./components/sections/Contact";
-import Work from "./components/sections/Works";
-import Hero from "./components/sections/Hero";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Work from "./sections/Works";
+import Hero from "./sections/Hero";
 
 
+import Testimonials from "./sections/Testimonials";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
       </main>
       <About />
+      <Testimonials /> 
       <Work />
       <Contact />
 

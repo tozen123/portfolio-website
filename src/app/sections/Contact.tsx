@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import AnimatedSection from "../AnimatedSection";
+import AnimatedSection from "../components/AnimatedSection";
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import emailjs from '@emailjs/browser';
